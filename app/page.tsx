@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import {getProject} from "@/sanity/sanity-utils";
-import {v4} from "uuid";
 import {Project} from "@/types/Project";
+import LayoutComponent from "@/components/Layout/layout.component";
+import CarouselComponent from "@/components/Carousel/Carousel.component";
 
 export default async function Home() {
 
@@ -9,9 +9,9 @@ export default async function Home() {
 
   return (
     <div>
-      {data.map((project: Project)=>(
-          <div key={v4()}> {}</div>
-      ))}
+      <LayoutComponent>
+          <CarouselComponent></CarouselComponent>
+      </LayoutComponent>
     </div>
   )
 }

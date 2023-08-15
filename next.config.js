@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
 
 images: {
   remotePatterns: [
@@ -10,6 +10,7 @@ images: {
       pathname: '/account123/**',
     },
   ]
+}
 }
 
 module.exports = nextConfig

@@ -22,7 +22,6 @@ export  default    function BiroulExecutiv() {
             if (keyWord.length>0){
                 let filteredUsers = users.filter(item => item.lastName.toLowerCase()
                     .includes(keyWord.toLowerCase())|| item.firstName.toLowerCase().includes(keyWord.toLowerCase()))
-                console.log(filteredUsers)
                 setfilteredUsers(filteredUsers);
             }else{
                 setfilteredUsers(users)
@@ -36,7 +35,6 @@ export  default    function BiroulExecutiv() {
         async function fetchData() {
             try {
                 const response = await GetBiroulExecutiv();
-                console.log(response)
                 setfilteredUsers(response)
                 setUsers(response);
             } catch (error) {

@@ -7,6 +7,10 @@ import authorSchema from './author.schema';
 import category from './category';
 import blockContentSchema from './blockContent.schema';
 import postSchema from './post.schema';
+import PartnersSchema from './partners.schema';
+import FormareaProfesionalaSchema from './FormareaProfesionala.schema';
+import FileSchema from './file.schema';
+import LegalinformationSchema from './Legalinformation.component';
 
 
 const schemas = [
@@ -19,7 +23,11 @@ const schemas = [
   authorSchema,
   category,
   blockContentSchema,
-  postSchema
+  postSchema,
+  PartnersSchema,
+  FormareaProfesionalaSchema,
+  FileSchema,
+  LegalinformationSchema
 
 ]
 

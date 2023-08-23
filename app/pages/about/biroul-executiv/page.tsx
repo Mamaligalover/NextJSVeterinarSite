@@ -29,8 +29,8 @@ export  default    function BiroulExecutiv() {
     }, []);
 
     return(
-        <div>
-            <TableComponent tableName={'Test Table Name'} filterMethod={setkeyword}>
+        <div className={'min-h-screen'}>
+            <TableComponent showFilter={true} tableName={'Biroul Executiv'} filterMethod={setkeyword}>
                 <thead>
                     <tr>
                         <th>Nr.</th>

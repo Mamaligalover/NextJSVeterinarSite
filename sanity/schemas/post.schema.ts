@@ -33,6 +33,12 @@ export default defineType({
                 hotspot: true,
             },
         }),
+
+        defineField({
+            name: 'description',
+            title: 'Descrierea articolului',
+            type: 'string',
+        }),
         defineField({
             name: 'categories',
             title: 'Categories',

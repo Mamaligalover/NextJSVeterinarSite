@@ -65,3 +65,22 @@ interface Title{
     _type: "string";
     current: string;
 }
+
+interface Partner extends Base{
+    name:string;
+    mainImage:Image;
+    decription:string;
+    link:string;
+}
+
+interface FileReference {
+    asset:Reference
+    _type:'customfileUpload'
+}
+interface FileInterface extends Base
+{
+    file:FileReference;
+    fileUrl:string;
+    name:string;
+    description:string;
+}

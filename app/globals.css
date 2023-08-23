@@ -20,3 +20,10 @@
 .simple::-webkit-scrollbar-thumb:active{
      background: rgba(0,0,0,0.25);
  }
+
+.translate-10px{
+    transition: transform 300ms;
+}
+.translate-10px:hover{
+    transform: translateY(-10px);
+}

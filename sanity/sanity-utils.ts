@@ -44,6 +44,18 @@ export async function getProject(): Promise<Project[]>{
         }`
     )
  }
+ export async function ComisiaDentologieLitigii(): Promise<BiroulExecutivType[]>{
+    return client.fetch(
+        groq`*[_type == "comision" ]
+        {
+         _id ,
+        "firstName" : prenume,
+        "lastName" : nume,
+        "workPositionName" :functia,
+        contact,
+        }`
+    )
+ }
 
  export async function GetMedicalWorkers():Promise<MedicalWorkers[]>{
     return client.fetch(groq`*[_type == "medicalworker"]{

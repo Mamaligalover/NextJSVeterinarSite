@@ -30,7 +30,7 @@ export default function CarouselComponent(){
     ]
 
     return(
-        <div className={'mt-8'} >
+        <div >
             <Carousel
                 showArrows={true}
                 showIndicators={true}

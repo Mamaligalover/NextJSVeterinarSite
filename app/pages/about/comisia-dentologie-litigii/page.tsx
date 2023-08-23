@@ -1,7 +1,7 @@
 'use client'
 import TableComponent from "@/components/Table/table.component";
 import { useState, useEffect } from "react";
-import {GetBiroulExecutiv} from "@/sanity/sanity-utils";
+import {ComisiaDentologieLitigii, GetBiroulExecutiv} from "@/sanity/sanity-utils";
 import {v4} from "uuid";
 import {BiroulExecutivType} from "@/types/BiroulExecutivType";
 
@@ -18,7 +18,7 @@ export  default    function ComisiaDeNtologieLitigii() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await GetBiroulExecutiv();
+                const response = await ComisiaDentologieLitigii();
                 console.log(response)
                 setUsers(response);
             } catch (error) {
@@ -29,8 +29,8 @@ export  default    function ComisiaDeNtologieLitigii() {
     }, []);
 
     return(
-        <div>
-            <TableComponent tableName={'Test Table Name'} filterMethod={setkeyword}>
+        <div className={'min-h-screen'}>
+            <TableComponent showFilter={true} tableName={'Comisia de Dentologie și Litigii'} filterMethod={setkeyword}>
                 <thead>
                 <tr>
                     <th>Nr.</th>

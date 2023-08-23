@@ -47,8 +47,8 @@ export default function MedicalPage()
     }, []);
 
     return(
-        <div>
-            <TableComponent tableName={'Test Table Name'} filterMethod={setkeyword}>
+        <div className={'min-h-screen'}>
+            <TableComponent showFilter={true} tableName={'Lista medecilor veterinari'} filterMethod={setkeyword}>
                 <thead>
                 <tr>
                     <th>Nr.</th>
@@ -90,21 +90,6 @@ export default function MedicalPage()
                     })
                 }
                 </tbody>
-                <tfoot>
-                    <div className={'flex'}>
-                        <div>first</div>
-                        {
-                            pages.map((page)=>{
-                                return(
-                                    <div key={page} className={'rotate-180 hover:bg-gray-400'}>
-                                        {page}
-                                    </div>
-                                )
-                            })
-                        }
-                        <div></div>
-                    </div>
-                </tfoot>
             </TableComponent>
         </div>
     )

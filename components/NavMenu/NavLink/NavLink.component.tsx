@@ -25,7 +25,7 @@ export default function NavLinkComponent(props: NavLinkProps){
      }
     return (
 
-        <div className={' relative bg-white hover:text-white capitalize transition-all text-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 px-10 py-4 flex items-center'} onMouseEnter={ () => mouseHandler(true) }
+        <div className={' relative bg-white hover:text-white capitalize transition-all text-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 px-10 py-5 flex items-center'} onMouseEnter={ () => mouseHandler(true) }
                      onMouseLeave={ () => mouseHandler(false) }>
             <li>
 

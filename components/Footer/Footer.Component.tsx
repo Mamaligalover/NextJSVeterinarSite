@@ -12,14 +12,11 @@ export default function FooterComponent( { customClass } : FooterComponentType){
            <div className={'flex flex-col w-3/4'}>
                <div className={'flex justify-around gap-8 p-4   border-b-2 border-gray-400'}>
                    <div className={'text-5xl font-black'}>
-                       Logo
+                       CMV
                    </div>
                    <div className={'text-center'}>
                        <ul className={'flex list-none items-center gap-8'}>
-                           <li className={'cursor-pointer'}><Link href={'/home'}>First navlink</Link></li>
-                           <li className={'cursor-pointer'}><Link href={'/home'}>Second navlink</Link></li>
-                           <li className={'cursor-pointer'}><Link href={'/home'}>Third navlink</Link></li>
-                           <li className={'cursor-pointer'}><Link href={'/home'}>Forth navlink</Link></li>
+
                        </ul>
                    </div>
                </div>

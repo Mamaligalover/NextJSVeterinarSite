@@ -26,38 +26,35 @@ export default function NavMenuComponent({customClass} : NavMenuComponentProp){
                     href: "/pages/about/generalinformation",
                 }, {
                     lable:"Biroul executiv",
-                    href: "/homw/1",
+                    href: "/pages/about/biroul-executiv",
                 }, {
                     lable:"Comisia de dentologie și litigii",
-                    href: "/homw/1",
+                    href: "/pages/about/comisia-dentologie-litigii",
                 },
             ]
-        },{
+        }
+        // {
+        //     customClass: "",
+        //     href: "/page/evenimente",
+        //     lable: "Evenimente",
+        //     disableRedirect : false,
+        //     subitems: []
+        // }
+        ,{
             customClass: "",
-            href: "/home",
-            lable: "Evenimente",
-            disableRedirect : false,
+            href: "/pages/legalinfo",
+            lable: "Legislație",
+            disableRedirect : true,
             subitems: []
         },{
             customClass: "",
-            href: "#",
-            lable: "Legislație",
-            disableRedirect : true,
-            subitems: [
-                {
-                    lable:"Prezentare generală",
-                    href: "/homw/1",
-                },
-            ]
-        },{
-            customClass: "",
-            href: "/home",
+            href: "/pages/medlist",
             lable: "Lista medicilor veterinari",
             disableRedirect : false,
             subitems: [ ]
         },{
             customClass: "",
-            href: "/home",
+            href: "/pages/profesional",
             lable: "Formarea profesională continuă",
             disableRedirect : false,
             subitems: [
@@ -69,7 +66,7 @@ export default function NavMenuComponent({customClass} : NavMenuComponentProp){
     return (
         <div className={'flex justify-around shadow-lg shadow-whites'}>
             <div className={'flex items-center'}>
-                <p className={'text-5xl font-bold capitalize text-black '}>
+                <p className={'text-5xl p-4 font-bold capitalize   bg-gradient-to-r  text-white flex items-center from-cyan-500 to-blue-500 '}>
                     CMV
                 </p>
             </div>

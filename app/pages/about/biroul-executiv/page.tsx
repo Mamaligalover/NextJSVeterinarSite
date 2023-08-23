@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import {GetBiroulExecutiv} from "@/sanity/sanity-utils";
 import {v4} from "uuid";
 import {BiroulExecutivType} from "@/types/BiroulExecutivType";
+import {MedicalWorkers} from "@/types/MedicalWorkers";
 
 async function GetDataFromServer() :Promise<BiroulExecutivType[]>
 {
@@ -14,12 +15,29 @@ async function GetDataFromServer() :Promise<BiroulExecutivType[]>
 export  default    function BiroulExecutiv() {
     const [keyWord, setkeyword] = useState('')
     const [users , setUsers] = useState<BiroulExecutivType[]>([]); // Initialize users state
+    const [filteredUsers, setfilteredUsers]= useState<BiroulExecutivType[]>([])
+
+    useEffect(()=>{
+        async function filter(){
+            if (keyWord.length>0){
+                let filteredUsers = users.filter(item => item.lastName.toLowerCase()
+                    .includes(keyWord.toLowerCase())|| item.firstName.toLowerCase().includes(keyWord.toLowerCase()))
+                console.log(filteredUsers)
+                setfilteredUsers(filteredUsers);
+            }else{
+                setfilteredUsers(users)
+            }
+
+        }
+        filter();
+    },[keyWord])
 
     useEffect(() => {
         async function fetchData() {
             try {
                 const response = await GetBiroulExecutiv();
                 console.log(response)
+                setfilteredUsers(response)
                 setUsers(response);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -41,7 +59,7 @@ export  default    function BiroulExecutiv() {
                 </thead>
                 <tbody>
                 {
-                    users.map((user)=>{
+                    filteredUsers.map((user)=>{
                         return(
                             <tr key={v4()} className={'p-20'}>
                                 <td className={'p-10'}>{users.indexOf(user)+1}</td>

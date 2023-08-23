@@ -38,6 +38,7 @@ export default function CarouselComponent(){
                 dynamicHeight={false}
                 showThumbs={true}
                 swipeable={true}
+                autoPlay={true}
             >
                 {responsive.map((item) => (
                     <div key={item.id} >

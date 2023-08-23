@@ -15,12 +15,31 @@ export  default    function ComisiaDeNtologieLitigii() {
     const [keyWord, setkeyword] = useState('')
     const [users , setUsers] = useState<BiroulExecutivType[]>([]); // Initialize users state
 
+    const [filteredUsers, setfilteredUsers]= useState<BiroulExecutivType[]>([])
+
+    useEffect(()=>{
+        async function filter(){
+            if (keyWord.length>0){
+                let filteredUsers = users.filter(item => item.lastName.toLowerCase()
+                    .includes(keyWord.toLowerCase())|| item.firstName.toLowerCase().includes(keyWord.toLowerCase()))
+                console.log(filteredUsers)
+                setfilteredUsers(filteredUsers);
+            }else{
+                setfilteredUsers(users)
+            }
+
+        }
+        filter();
+    },[keyWord])
+
     useEffect(() => {
         async function fetchData() {
             try {
                 const response = await ComisiaDentologieLitigii();
                 console.log(response)
                 setUsers(response);
+                setfilteredUsers(filteredUsers);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -41,7 +60,7 @@ export  default    function ComisiaDeNtologieLitigii() {
                 </thead>
                 <tbody>
                 {
-                    users.map((user)=>{
+                    filteredUsers.map((user)=>{
                         return(
                             <tr key={v4()} className={'p-20'}>
                                 <td className={'p-10'}>{users.indexOf(user)+1}</td>

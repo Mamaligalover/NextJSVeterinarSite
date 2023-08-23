@@ -1,4 +1,4 @@
-import '../../globals.css'
+import '../globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import LayoutComponent from "@/components/Layout/layout.component";
@@ -18,7 +18,7 @@ export default function RootLayout({ children,}: {
 
         <body className={inter.className}>
         <LayoutComponent>
-                {children}
+            {children}
         </LayoutComponent>
         </body>
         </html>

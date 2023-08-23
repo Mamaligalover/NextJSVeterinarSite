@@ -1,0 +1,42 @@
+
+.table-responsible{
+  width: 100%;
+  overflow-x: auto;
+
+}
+table{
+
+  margin: 20px auto;
+  text-align: center;
+  width: 90%;
+  thead{
+    width: 100%;
+
+    tr{
+      font-size: 18px;
+      text-transform: capitalize;
+      border-bottom: 2px solid transparent;
+      color: #949494;
+      border-bottom: 3px solid rgba(72, 73, 73, 0.35);
+      --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    th{
+      padding: 20px;
+    }
+    }
+  }
+  tbody{
+    font-size: 14px;
+    text-transform: capitalize;
+    tr{
+      border-bottom: 3px solid rgba(72, 73, 73, 0.35);
+      --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+    th{
+      padding: 30px;
+    }
+  }
+}

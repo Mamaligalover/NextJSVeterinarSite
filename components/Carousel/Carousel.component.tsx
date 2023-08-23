@@ -2,6 +2,7 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import React from 'react';
+import "./CaruselStyle.scss"
 
 
 
@@ -12,24 +13,24 @@ export default function CarouselComponent(){
             id: 1,
             title: "Swiper Carousel Example",
             text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos mollitia sed quod consectetur at quam dolore praesentium neque eos assumenda iusto nam laborum laboriosam odio blanditiis possimus accusantium recusandae porro exercitationem itaque",
-            imageUrl: "https://res.cloudinary.com/kizmelvin/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1597364662/kizmelvin/ussama-azam-hlg-ltdCoI0-unsplash_ttfjib.jpg"
+            imageUrl: "https://images.pexels.com/photos/7121954/pexels-photo-7121954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             id: 2,
             title: "Swiper Carousel Example",
             text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos mollitia sed quod consectetur at quam dolore praesentium neque eos assumenda iusto nam laborum laboriosam odio blanditiis possimus accusantium recusandae porro exercitationem itaque",
-            imageUrl: "https://res.cloudinary.com/kizmelvin/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1645530199/kizmelvin/Carousel%20assets/slim-emcee-jzdOX0XkXr8-unsplash_zocsdq.jpg"
+            imageUrl: "https://images.pexels.com/photos/64231/cows-cow-austria-pasture-sky-64231.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             id: 3,
             title: "Swiper Carousel Example",
             text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos mollitia sed quod consectetur at quam dolore praesentium neque eos assumenda iusto nam laborum laboriosam odio blanditiis possimus accusantium recusandae porro exercitationem itaque",
-            imageUrl: "https://res.cloudinary.com/kizmelvin/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1645534321/kizmelvin/Carousel%20assets/luwadlin-bosman-J1oObe7WWjk-unsplash_f56oh3.jpg"
+            imageUrl: "https://images.pexels.com/photos/828784/pexels-photo-828784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         }
     ]
 
     return(
-        <div >
+        <div className={'mt-8'} >
             <Carousel
                 showArrows={true}
                 showIndicators={true}
@@ -40,12 +41,13 @@ export default function CarouselComponent(){
             >
                 {responsive.map((item) => (
                     <div key={item.id} >
-                        <div className={'w-full h-32 bg-gradient-to-r from-cyan-500 to-blue-500'} >
-.
-                        </div>
-                        <div >
-                            <h2>{item.title}</h2>
-                            <p>{item.text}</p>
+                        <div className={`w-full relative h-80  bg-no-repeat bg-center bg-cover mx-auto `} style={{
+                            backgroundImage: `url(${item.imageUrl})`,
+                            maxWidth: "1440px",
+                        }} >
+                            <div className={'flex flex-row-reverse'}>
+                                <div className={`bg-white mr-20 bg-no-repeat bg-center bg-contain logo  absolute w-40 h-full`} />
+                            </div>
                         </div>
                     </div>
                 ))}

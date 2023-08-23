@@ -11,161 +11,58 @@ export default function NavMenuComponent({customClass} : NavMenuComponentProp){
     const navLinckitems :NavLinkProps[] = [
         {
             customClass: "",
-            href: "/home",
-            lable: "test1",
+            href: "/",
+            lable: "Acasă",
+            disableRedirect : false,
+            subitems: []
+        },{
+            customClass: "",
+            href: "#",
+            lable: "Despre CMV",
+            disableRedirect : true,
             subitems: [
                 {
-                    lable:"subitem1",
+                    lable:"Prezentarea generală",
+                    href: "/pages/about/generalinformation",
+                }, {
+                    lable:"Biroul executiv",
                     href: "/homw/1",
                 }, {
-                    lable:"subasdaitem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subasdasditem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subitasdasdem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
+                    lable:"Comisia de dentologie și litigii",
                     href: "/homw/1",
                 },
             ]
         },{
             customClass: "",
             href: "/home",
-            lable: "test1",
+            lable: "Evenimente",
+            disableRedirect : false,
+            subitems: []
+        },{
+            customClass: "",
+            href: "#",
+            lable: "Legislație",
+            disableRedirect : true,
             subitems: [
                 {
-                    lable:"subitem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subasdaitem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subasdasditem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subitasdasdem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
+                    lable:"Prezentare generală",
                     href: "/homw/1",
                 },
             ]
         },{
             customClass: "",
             href: "/home",
-            lable: "test1",
-            subitems: [
-                {
-                    lable:"subitem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subasdaitem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subasdasditem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subitasdasdem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
-                    href: "/homw/1",
-                },
-            ]
+            lable: "Lista medicilor veterinari",
+            disableRedirect : false,
+            subitems: [ ]
         },{
             customClass: "",
             href: "/home",
-            lable: "test1",
-            subitems: [
-                {
-                    lable:"subitem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subasdaitem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subasdasditem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subitasdasdem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
-                    href: "/homw/1",
-                },
-            ]
-        },{
-            customClass: "",
-            href: "/home",
-            lable: "test1",
-            subitems: [
-                {
-                    lable:"subitem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subasdaitem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subasdasditem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subitasdasdem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
-                    href: "/homw/1",
-                },
-            ]
-        },{
-            customClass: "",
-            href: "/home",
-            lable: "test1",
+            lable: "Formarea profesională continuă",
+            disableRedirect : false,
             subitems: [
             ]
-        },{
-            customClass: "",
-            href: "/home",
-            lable: "test1",
-            subitems: [
-                {
-                    lable:"subitem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subasdaitem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subasdasditem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subitasdasdem1",
-                    href: "/homw/1",
-                }, {
-                    lable:"subiasdasdtem1",
-                    href: "/homw/1",
-                },
-            ]
-        },
+        }
     ]
 
 
@@ -173,7 +70,7 @@ export default function NavMenuComponent({customClass} : NavMenuComponentProp){
         <div className={'flex justify-around shadow-lg shadow-whites'}>
             <div className={'flex items-center'}>
                 <p className={'text-5xl font-bold capitalize text-black '}>
-                    logo
+                    CMV
                 </p>
             </div>
             <div className={`${customClass} flex flex-row`}>

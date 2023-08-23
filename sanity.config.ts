@@ -1,6 +1,7 @@
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import schemas from "@/sanity/schemas";
+import {visionTool} from '@sanity/vision'
 
 
 const config = defineConfig({
@@ -10,7 +11,7 @@ const config = defineConfig({
     title: 'VeterinarSite',
     apiVersion: "2023-08-14",
     basePath: '/admin',
-    plugins: [ deskTool() ],
+    plugins: [ deskTool(), visionTool() ],
     schema: { types: schemas  }
 })
 

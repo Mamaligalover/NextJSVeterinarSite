@@ -1,0 +1,29 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.simple::-webkit-scrollbar {
+    width:3px;
+    height: 3px;
+}
+.simple::-webkit-scrollbar-track {
+     border-radius: 10px;
+     background: rgba(0,0,0,0.01);
+ }
+.simple::-webkit-scrollbar-thumb{
+     border-radius: 10px;
+     background: rgba(0,0,0,0.2);
+ }
+.simple::-webkit-scrollbar-thumb:hover{
+     background: rgba(0, 0, 0, 0.25);
+ }
+.simple::-webkit-scrollbar-thumb:active{
+     background: rgba(0,0,0,0.25);
+ }
+
+.translate-10px{
+    transition: transform 300ms;
+}
+.translate-10px:hover{
+    transform: translateY(-10px);
+}

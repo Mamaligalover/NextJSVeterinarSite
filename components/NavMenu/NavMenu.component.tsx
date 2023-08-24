@@ -1,6 +1,6 @@
 import NavLinkComponent, { NavLinkProps} from "@/components/NavMenu/NavLink/NavLink.component";
 import {v4} from "uuid";
-
+import Link from "next/link";
 type NavMenuComponentProp = {
     customClass : string,
 
@@ -54,10 +54,17 @@ export default function NavMenuComponent({customClass} : NavMenuComponentProp){
             subitems: [ ]
         },{
             customClass: "",
-            href: "/pages/profesional",
+            href: "#",
             lable: "Formarea profesională continuă",
             disableRedirect : false,
             subitems: [
+                {
+                    lable:"Componența Comisiei",
+                    href: "/pages/profesional",
+                }, {
+                    lable:"Documente",
+                    href: "/pages/formarea-profesionala-docs",
+                },
             ]
         }
     ]
@@ -66,9 +73,9 @@ export default function NavMenuComponent({customClass} : NavMenuComponentProp){
     return (
         <div className={'flex justify-around shadow-lg shadow-whites'}>
             <div className={'flex items-center'}>
-                <p className={'text-5xl p-4 font-bold capitalize   bg-gradient-to-r  text-white flex items-center from-cyan-500 to-blue-500 '}>
+                <Link href={"/"} className={'text-5xl p-4 font-bold capitalize   bg-gradient-to-r  text-white flex items-center from-cyan-500 to-blue-500 '}>
                     CMV
-                </p>
+                </Link>
             </div>
             <div className={`${customClass} flex flex-row`}>
                 {

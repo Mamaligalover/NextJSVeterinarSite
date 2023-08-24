@@ -25,7 +25,7 @@ export default function NavLinkComponent(props: NavLinkProps){
      }
     return (
 
-        <div className={' relative bg-white hover:text-white capitalize transition-all text-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 px-10 py-5 flex items-center'} onMouseEnter={ () => mouseHandler(true) }
+        <div className={'h-full  relative bg-white hover:text-white capitalize transition-all text-center hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 px-10 py-5 flex items-center'} onMouseEnter={ () => mouseHandler(true) }
                      onMouseLeave={ () => mouseHandler(false) }>
             <li>
 
@@ -34,7 +34,7 @@ export default function NavLinkComponent(props: NavLinkProps){
                 </Link>
 
                 {props.subitems.length > 0 && <div
-                  className={`${!isMouseOn ? 'hidden' : ''} rounded  absolute min-w-fit -translate-x-1/4  z-[99] mt-4 bg-white bg-opacity-150 text-left p-5  max-h-60  overflow-y-auto simple`}>
+                  className={`${!isMouseOn ? 'hidden' : ''} rounded translate-y-3.5  absolute  w-52 -translate-x-1/3  z-[99] mt-4 bg-white bg-opacity-150 text-left p-5  max-h-60  overflow-y-auto simple`}>
                     {props.subitems.map((item) => {
                         return (
                             <div key={v4()} className={'p-2'} >

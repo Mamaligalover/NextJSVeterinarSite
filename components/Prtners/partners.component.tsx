@@ -3,6 +3,7 @@ import React from "react";
 import urlFor from "@/lib/urlFor";
 import Link from 'next/link';
 import '../../app/globals.css'
+import {v4} from "uuid";
 
 
 type Props = {
@@ -27,7 +28,7 @@ function PartnersComponent({partners}:Props)
              {
                  partners.map((partner)=>{
                      return(
-                         <div key={partner._id} className={' translate-10px shadow mx-8 rounded bg-white'}  >
+                         <div key={v4()} className={' translate-10px shadow mx-8 rounded bg-white'}  >
                              <div className={'h-40 bg-center bg-contain bg-no-repeat '}
                              style={{
                                  backgroundImage:`url(${urlFor(partner.mainImage).url()})`

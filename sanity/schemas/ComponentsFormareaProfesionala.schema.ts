@@ -1,8 +1,8 @@
 
 
-const ComisionSchema = {
-    name: 'comision',
-    title : 'Comisia de dentologie si Litigii',
+const ComponentsFormareProfesionala = {
+    name: 'compformareaprofesionalacontinua',
+    title : 'Componența Comisiei pentru Știință, Cercetare și Formare Profesională Continuă',
     type : 'document',
     fields : [
         {
@@ -27,4 +27,4 @@ const ComisionSchema = {
         }
     ]
 }
-export default ComisionSchema;
+export default ComponentsFormareProfesionala;

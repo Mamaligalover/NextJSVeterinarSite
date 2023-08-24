@@ -3,7 +3,7 @@
 
 const FormareaProfesionalaSchema={
     name:'formareaprofesionala',
-    title: 'Formarea Profesionala continua',
+    title: 'Formarea Profesionala continua DOCS',
     type: 'document',
     fields:[
         {

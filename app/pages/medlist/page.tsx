@@ -4,17 +4,21 @@ import { GetMedicalWorkers } from "@/sanity/sanity-utils";
 import TableComponent from "@/components/Table/table.component";
 import {v4} from "uuid";
 import {MedicalWorkers} from "@/types/MedicalWorkers";
+import DateTimeFormatOptions from "use-intl/src/core/DateTimeFormatOptions";
 
 
 export default function MedicalPage()
 {
+
+    const optons :DateTimeFormatOptions={
+
+    };
     const [keyWord, setkeyword] = useState('')
 
     const [users , setUsers] = useState<MedicalWorkers[]>([]); // Initialize users state
 
     const [filteredUsers, setfilteredUsers]= useState<MedicalWorkers[]>([])
-
-    useEffect(()=>{
+        useEffect(()=>{
     async function filter(){
         if (keyWord.length>0){
             let filteredUsers = users.filter(item => item.nume.toLowerCase()
@@ -59,26 +63,27 @@ export default function MedicalPage()
                 <tbody>
                 {
                     filteredUsers.map((user)=>{
+                        const date = new Date(user.startDate);
                         return(
                             <tr key={v4()} className={'p-20'}>
                                 <td className={'p-6'}>{users.indexOf(user)+1}</td>
                                 <td>{user.nume} {user.prenume}</td>
                                 <td>{user.medicalCodFromCMV}</td>
                                 <td>{user.diploNumber}</td>
-                                <td>{user.startDate}</td>
+                                <td>{`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}</td>
                                 <td>{
                                     user.statut ==='1'?
-                                        <button className={'bg-green-600 text-white p-4 border rounded text-1xl'}>
+                                        <button className={'bg-green-600 text-white px-4 py-2 border rounded-3xl text-1xl'}>
                                             Activ
                                         </button>
                                         :
-                                        <button className={'bg-red-600 text-white px-4 py-2 border rounded text-1xl'}>
+                                        <button className={'bg-red-600 text-white px-4 py-2 border rounded-3xl text-1xl'}>
                                             Inactiv
                                         </button>
                                 }</td>
-                                <td>
+                                <td >
                                     {
-                                        user.sanctions!= null? user.sanctions : "Nu sunt"
+                                        user.sanctions != null ? user.sanctions : "Nu sunt"
                                     }
                                 </td>
                             </tr>

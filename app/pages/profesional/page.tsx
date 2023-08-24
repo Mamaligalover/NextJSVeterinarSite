@@ -6,22 +6,44 @@ import {v4} from "uuid";
 import urlFor from "@/lib/urlFor";
 import {useEffect, useState} from "react";
 import {ComisiaDentologieLitigii} from "@/sanity/sanity-utils";
+import {BiroulExecutivType} from "@/types/BiroulExecutivType";
 
 
 
  function FormareaProfesionalaContinue()
 {
     const [keyWord, setkeyword] = useState('')
-    const [files, setFiles] = useState<FileInterface[]>([])
-    const query = groq`*[_type == "formareaprofesionala"]{
-    "name" :file.name,
-    "description":file.description,
-    "fileUrl":file.asset->url}`
+    const [users, setUsers] = useState<BiroulExecutivType[]>([])
+    const [filterusers, setFilterUsers] = useState<BiroulExecutivType[]>([])
+    const query = groq`*[_type == "compformareaprofesionalacontinua"]{
+    _id ,
+        "firstName" : prenume,
+        "lastName" : nume,
+        "workPositionName" :functia,
+        contact
+        }`
+
+    useEffect(()=>{
+        async function filter(){
+            if (keyWord.length>0){
+                let filteredUsers = users.filter(item => item.lastName.toLowerCase()
+                    .includes(keyWord.toLowerCase())|| item.firstName.toLowerCase().includes(keyWord.toLowerCase()))
+                console.log(filteredUsers)
+                setFilterUsers(filteredUsers);
+            }else{
+                setFilterUsers(users)
+            }
+
+        }
+        filter();
+    },[keyWord])
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await client.fetch<FileInterface[]>(query)
-                setFiles(response);
+                const response = await client.fetch<BiroulExecutivType[]>(query)
+
+                setUsers(response);
+                setFilterUsers(response);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -32,34 +54,32 @@ import {ComisiaDentologieLitigii} from "@/sanity/sanity-utils";
 
 
     return(<div className={'min-h-screen'}>
-        <TableComponent showFilter={false} tableName={'Formarea profesională continuă'} filterMethod={()=>{}}>
-            <table>
+        <TableComponent showFilter={true} tableName={'Componența Comisiei pentru Știință, Cercetare și Formare Profesională Continuă'} filterMethod={setkeyword}>
                 <thead>
                    <tr>
                         <th>Nr.</th>
-                        <th>Denumirea documentului</th>
-                        <th>Descrierea</th>
-                        <th> Acțiuni</th>
+                        <th>Nume</th>
+                        <th>Prenume</th>
+                        <th>Funcția</th>
+                        <th>Contact</th>
                    </tr>
                 </thead>
                 <tbody>
                 {
-                    files.map((file)=>{
+                    filterusers.map((user)=>{
                         return(
-                            <tr key={file._id} >
-                                <td className={'p-4'}>{files.indexOf(file)+1}</td>
-                                <td>{file.name}</td>
-                                <td>{file.description}</td>
-                                <td>
-                                    <a href={`${file.fileUrl}?dl=`} target={'_black'} className={'p-4 hover:text-blue-400'}>
-                                        Descarca
-                                    </a></td>
+                            <tr key={v4()} >
+                                <td className={'p-4'}>{users.indexOf(user)+1}</td>
+                                <td>{user.firstName}</td>
+                                <td>{user.lastName}</td>
+                                <td>{user.workPositionName}</td>
+                                <td>{user.contact}</td>
+
                             </tr>
                         )
                     })
                 }
                 </tbody>
-            </table>
         </TableComponent>
     </div>)
 }

@@ -38,7 +38,7 @@ export  default    function ComisiaDeNtologieLitigii() {
                 const response = await ComisiaDentologieLitigii();
                 console.log(response)
                 setUsers(response);
-                setfilteredUsers(filteredUsers);
+                setfilteredUsers(response);
 
             } catch (error) {
                 console.error('Error fetching data:', error);

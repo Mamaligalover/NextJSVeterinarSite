@@ -65,7 +65,7 @@ export async function getProject(): Promise<Project[]>{
     "medicalCodFromCMV":medcod,
     "diploNumber":diplom,
     "startDate":launchAt,
-    "statut":status->title,
+    "statut":status,
     }`)
  }
 

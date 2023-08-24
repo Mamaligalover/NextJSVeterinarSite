@@ -4,15 +4,10 @@ import { GetMedicalWorkers } from "@/sanity/sanity-utils";
 import TableComponent from "@/components/Table/table.component";
 import {v4} from "uuid";
 import {MedicalWorkers} from "@/types/MedicalWorkers";
-import DateTimeFormatOptions from "use-intl/src/core/DateTimeFormatOptions";
 
 
 export default function MedicalPage()
 {
-
-    const optons :DateTimeFormatOptions={
-
-    };
     const [keyWord, setkeyword] = useState('')
 
     const [users , setUsers] = useState<MedicalWorkers[]>([]); // Initialize users state
